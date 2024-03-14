@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define V 6  //  указать кол во вершин в графе
+#define V 6  //  СѓРєР°Р·Р°С‚СЊ РєРѕР» РІРѕ РІРµСЂС€РёРЅ РІ РіСЂР°С„Рµ
 
 bool bfs(int rGraph[V][V], int s, int t, int parent[])
 {
@@ -44,7 +44,7 @@ bool bfs(int rGraph[V][V], int s, int t, int parent[])
 int fordFulkerson(int graph[V][V], int s, int t)
 {
     int u, v;
-    int rGraph[V][V];  // Остаточная сеть
+    int rGraph[V][V];  // РћСЃС‚Р°С‚РѕС‡РЅР°СЏ СЃРµС‚СЊ
     for (u = 0; u < V; u++)
         for (v = 0; v < V; v++)
 
@@ -73,8 +73,8 @@ int fordFulkerson(int graph[V][V], int s, int t)
 
         max_flow += path_flow;
 
-        // Вывод состояния графа
-        cout << "Состояние графа после увеличения потока на " << path_flow << ":" << endl;
+        // Р’С‹РІРѕРґ СЃРѕСЃС‚РѕСЏРЅРёСЏ РіСЂР°С„Р°
+        cout << "РЎРѕСЃС‚РѕСЏРЅРёРµ РіСЂР°С„Р° РїРѕСЃР»Рµ СѓРІРµР»РёС‡РµРЅРёСЏ РїРѕС‚РѕРєР° РЅР° " << path_flow << ":" << endl;
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
 
@@ -94,7 +94,7 @@ int main()
 
     setlocale(LC_ALL, "RUS");
     int graph[V][V];
-    cout << "Введите матрицу пропускных способностей для графа (" << V << "x" << V << "):" << endl;
+    cout << "Р’РІРµРґРёС‚Рµ РјР°С‚СЂРёС†Сѓ РїСЂРѕРїСѓСЃРєРЅС‹С… СЃРїРѕСЃРѕР±РЅРѕСЃС‚РµР№ РґР»СЏ РіСЂР°С„Р° (" << V << "x" << V << "):" << endl;
     for (int i = 0; i < V; i++) {
         for (int j = 0; j < V; j++) {
 
@@ -104,11 +104,11 @@ int main()
         }
     }
     int source, sink;
-    cout << "Введите исток и сток: ";
+    cout << "Р’РІРµРґРёС‚Рµ РёСЃС‚РѕРє Рё СЃС‚РѕРє: ";
     cin >> source >> sink;
 
-    // Вызов алгоритма Ф-Ф
-    cout << "Максимальный поток в графе: " << fordFulkerson(graph, source, sink) << endl;
+    // Р’С‹Р·РѕРІ Р°Р»РіРѕСЂРёС‚РјР° Р¤-Р¤
+    cout << "РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ РїРѕС‚РѕРє РІ РіСЂР°С„Рµ: " << fordFulkerson(graph, source, sink) << endl;
 
     return 0;
 }
